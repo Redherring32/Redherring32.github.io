@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Xbox PCB Revision Identification</h1>
+<p>The following is a guide for identifying and determining the official PCB revision of an original Xbox motherboard.<br>
+Whereas other guides do exist, they use made up community "revision" numbers, and most list "revisions" that simply don't exist.<br>
+This guide aims to be a (albeit futile) attempt at fixing public knowledge and showcasing the official Microsoft revision system.</p>
+
+<p>There are 3 unique retail PCBs, other PCBs do exist but they were prototypes or dev/debug hardware and were never sold to customers.<br> This guide will only show retail revisions for simplicity, as well as for the fact that's what the general user will have.<br>
+
+There are a variety of ways to identify what revision you have, each with different levels of accuracy, I will be showing 2 in this guide, as well as showing various bits of info about the 3 boards.</p>
+
+<h1>PCB Revision Markings:</h1>
+<p>If you have access to the motherboard, the easiest way to identify it is to simply look at the PCB revision markings.<br>
+On 009 boards it is located in the bottom right of the back side of the board.<br>
+On 012 and 121 boards it is located in the top right of the back side of the board, right next to the IDE header.<br><br>
+
+The first 6 characters are likely to be the internal part number designation (121 was a cost reduced re-release, which would explain it being different), and the last 3 characters are the PCB revision designation.<br><br>
+
+The following diagram shows where they are located:</p>
+
+<img src="C:\Users\Redherring32\Documents\Website\PCBMarkings.png" alt="Revision Designators">
+
+
+<h1> Serial Number:</h1>
+<p> If you want to identify revision without opening the case you can easily do so using the serial number.<br>
+It is the least accurate of the methods in this guide, but it is a pretty adequate best guess if you are currently unable to open the console.<br><br></p>
+
+<p>The serial number can be found on a sticker on the underside of the console, it is formatted as shown:<br><br>
+
+XXXXXXX YWXXX<br><br>
+
+The 8th and 9th digits are the last digit of the year, and first digit of the week in the year respectively.<br>
+Using this you can roughly identify the motherboard PCB as follows:<br><br>
+
+If YW is 25 or less, it is likely a 009 PCB.<br><br>
+
+If YW is more than 25 but less than or equal to 33, it is likely a 012 PCB.<br><br>
+
+If YW is more than 33, it is likely a 121 PCB.</p><br>
+
+
+
+
+
+<h1>Additional Information:</h1>
+
+<h3>GPU Revisions:</h3>
+<p>There are 3 different GPU revisions.
+009 used XGPU*<br><br>
+
+012 used XGPU S<br><br>
+
+121 used XGPU-B<br><br>
+
+There are currently no known differences between the XGPU and XGPU S revisions.<br>
+XGPU-B received a dieshrink from 150nm to 130nm and its core voltage dropped from 1.5 to 1.375V, reducing its power draw and consequently lowering the heat it generates.<br>
+All GPU revisions are pin compatible and electrically compatible, but XGPU-B doesn't appear to be compatible with older kernels.<br><br>
+
+*Some amount of 009 boards have been found that have an XGPU S, but it appears to be *extremely* uncommon.</p>
+<img src="C:\Users\Redherring32\Documents\Website\XGPU.jpg" alt="XGPU" height="333" width="500"><br>
+<img src="C:\Users\Redherring32\Documents\Website\XGPU-S.jpg" alt="XGPU S" height="333" width="500"><br>
+<img src="C:\Users\Redherring32\Documents\Website\XGPU-B.jpg" alt="XGPU-B" height="333" width="500">
+
+
+<h2>Video Encoders:</h2>
+There were 3 different video encoders used throughout the Xbox's lifespan.
+There are believed to be quality differences in the output from the 3 encoders, however it is largely anecdotal and isn't really worth seeking a <br>specific one out for this.<br><br>
+
+009 Only used Conexant CX25871-14 video encoders.<br><br>
+
+012 can be found with either Conexant CX25871-14 encoders, or Focus FS454 encoders.
+Both have identical pinouts, however FS454 encoders require different supporting passives.<br><br>
+
+121 use a custom "Xcalibur" video encoder.
+121 motherboards have a "480p bug" with some content, and it was widely believed to be caused by a flaw in the encoder, however in reality it was<br> a kernel bug present in all MS and "custom" MS source based BIOS.<br><br>
+
+<h2>PSU Connectors:</h2>
+There were 2 different PSU connectors, and 3 different PSU pinouts used throughout the Xbox's lifespan.<br><br>
+
+009 use an off the shelf "AT" connector with a custom pinout.<br><br>
+
+012 and 121 use an off the shelf "ATX" connector with custom pinouts.<br><br>
+
+you can plug 012 and 121 PSUs into either board physically, however they have different pinouts so they are not compatible.
+
+
+
+
+
+<h1>TO-DO</h1>
+
+* Add Video encoder photos<br><br>
+
+* Add PSU pinouts<br><br>
+
+* Add SMC info?
+
+
+</body>
+</html>
